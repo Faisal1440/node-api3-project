@@ -4,6 +4,9 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   // do your magic!
+  posts.get()
+  .then(data => res.json(data))
+  .catch(err => res.status(404).json({message: 'Could not find posts'}))
 });
 
 router.get('/:id', (req, res) => {
